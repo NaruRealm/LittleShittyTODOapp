@@ -1,1 +1,1 @@
-run todo.py for the app
+run note.py for the app
