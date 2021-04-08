@@ -36,7 +36,7 @@ def Reset(ToReset):
     TODO = getinfo("x")
     if ToReset == 'all':
         confirm = input('Are you  sure? Y/n: ')
-        if confirm == 'n':
+        if confirm.lower() == 'n':
             print('Cancelled')
             time.sleep(1)
             return
@@ -53,6 +53,7 @@ def Reset(ToReset):
         print('Cancelled')
         time.sleep(1)
         Back(ToReset)
+        return
     Resetting = TODO[ToReset]
     Resetting.clear()
     TODO[ToReset] = Resetting
@@ -72,7 +73,7 @@ def Add(ToAdd):
 def Remove(List):
     ToRemove = input('Enter the number of the item to remove (default last): ')
     if ToRemove == '':
-        ToRemove = -1
+        ToRemove = 0
     TODO = getinfo("x")
     Removing = TODO[List]
     try:
